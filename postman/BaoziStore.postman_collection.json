@@ -1,0 +1,118 @@
+{
+  "info": {
+    "name": "Baozi Store API",
+    "description": "Testes da API REST da Baozi Store. Antes de rodar, edite a variavel 'nomeCliente' da colecao com seu Nome+RU (ex.: Vinicius1234567).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" },
+    { "key": "nomeCliente", "value": "ViniciusSEURU" }
+  ],
+  "item": [
+    {
+      "name": "Clientes",
+      "item": [
+        {
+          "name": "1. Criar Cliente (POST)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"{{nomeCliente}}\",\n  \"clienteDesde\": \"2026-10-12\"\n}" },
+            "url": "{{baseUrl}}/clientes"
+          }
+        },
+        {
+          "name": "Listar Clientes (GET)",
+          "request": { "method": "GET", "url": "{{baseUrl}}/clientes" }
+        },
+        {
+          "name": "Buscar Cliente por ID (GET)",
+          "request": { "method": "GET", "url": "{{baseUrl}}/clientes/1" }
+        },
+        {
+          "name": "Atualizar Cliente (PUT - opcional)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"{{nomeCliente}}\",\n  \"clienteDesde\": \"2026-10-12\"\n}" },
+            "url": "{{baseUrl}}/clientes/1"
+          }
+        },
+        {
+          "name": "Apagar Cliente (DELETE)",
+          "request": { "method": "DELETE", "url": "{{baseUrl}}/clientes/1" }
+        }
+      ]
+    },
+    {
+      "name": "Produtos",
+      "item": [
+        {
+          "name": "2. Criar Produto (POST)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Baozi de Porco\",\n  \"preco\": 6.50,\n  \"estoque\": true\n}" },
+            "url": "{{baseUrl}}/produtos"
+          }
+        },
+        {
+          "name": "Listar Produtos (GET)",
+          "request": { "method": "GET", "url": "{{baseUrl}}/produtos" }
+        },
+        {
+          "name": "Buscar Produto por ID (GET)",
+          "request": { "method": "GET", "url": "{{baseUrl}}/produtos/1" }
+        },
+        {
+          "name": "Atualizar Produto (PUT - opcional)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Baozi de Porco\",\n  \"preco\": 7.00,\n  \"estoque\": true\n}" },
+            "url": "{{baseUrl}}/produtos/1"
+          }
+        },
+        {
+          "name": "Apagar Produto (DELETE)",
+          "request": { "method": "DELETE", "url": "{{baseUrl}}/produtos/1" }
+        }
+      ]
+    },
+    {
+      "name": "Pedidos",
+      "item": [
+        {
+          "name": "3. Criar Pedido (POST)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"cliente\": { \"id\": 1 },\n  \"produto\": { \"id\": 1 },\n  \"quantidade\": 12\n}" },
+            "url": "{{baseUrl}}/pedidos"
+          }
+        },
+        {
+          "name": "Listar Pedidos (GET)",
+          "request": { "method": "GET", "url": "{{baseUrl}}/pedidos" }
+        },
+        {
+          "name": "Buscar Pedido por ID (GET)",
+          "request": { "method": "GET", "url": "{{baseUrl}}/pedidos/1" }
+        },
+        {
+          "name": "Atualizar Pedido (PUT - opcional)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"cliente\": { \"id\": 1 },\n  \"produto\": { \"id\": 1 },\n  \"quantidade\": 15\n}" },
+            "url": "{{baseUrl}}/pedidos/1"
+          }
+        },
+        {
+          "name": "Apagar Pedido (DELETE)",
+          "request": { "method": "DELETE", "url": "{{baseUrl}}/pedidos/1" }
+        }
+      ]
+    }
+  ]
+}
