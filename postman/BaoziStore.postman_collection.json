@@ -1,12 +1,12 @@
 {
   "info": {
     "name": "Baozi Store API",
-    "description": "Testes da API REST da Baozi Store. Antes de rodar, edite a variavel 'nomeCliente' da colecao com seu Nome+RU (ex.: Vinicius1234567).",
+    "description": "Testes da API REST da Baozi Store. Variavel 'nomeCliente' ja configurada como Vinicius4582307.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
     { "key": "baseUrl", "value": "http://localhost:8080" },
-    { "key": "nomeCliente", "value": "ViniciusSEURU" }
+    { "key": "nomeCliente", "value": "Vinicius4582307" }
   ],
   "item": [
     {
